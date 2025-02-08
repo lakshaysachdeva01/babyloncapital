@@ -1,0 +1,37 @@
+<%- include('header'), {seoDetails} %>
+
+<section class="nopage">
+    <div class="nopage__bg">
+      <img src="/assets/img/404/1.png" alt="image">
+    </div>
+
+    <div class="container">
+      <div class="row justify-center">
+        <div class="col-auto">
+          <div class="nopage__content text-center">
+            <h1 class="text-white" style="font-size: 100px;">Thank You</h1>
+            <p id="thank-you-message" class="text-white mt-30"></p>
+
+            <div class="d-flex">
+              <a href="/" class="button -md -type-2 -accent-1 bg-accent-2 mx-auto mt-40">BACK TO HOMEPAGE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const message = sessionStorage.getItem("thankYouMessage");
+        
+        if (message) {
+            // Display the message in an element with ID 'thank-you-message'
+            document.getElementById("thank-you-message").textContent = message;
+    
+            // Optionally clear the message after it's shown (to avoid persisting after page reload)
+            sessionStorage.removeItem("thankYouMessage");
+        }
+    });
+    
+</script>
+<%- include('footer') %>

@@ -1,0 +1,475 @@
+<%- include('header'), {seoDetails} %>
+<section data-anim-wrap class="pageHero -type-2 -items-center">
+    <div data-anim-child="img-right cover-white delay-1" class="pageHero__bg">
+      <img src="/assets/img/superdeluxe.avif" alt="image">
+    </div>
+  
+    <div class="container">
+      <div class="row justify-center">
+        <div class="col-12">
+          <div data-split='lines' data-anim-child="split-lines delay-3" class="pageHero__content text-center">
+            <h1 class="pageHero__title lh-11 capitalize text-white">
+             Super-Deluxe Room
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<section class="layout-pt-lg" style="padding-top: 60px;">
+    <div data-anim-wrap class="container">
+
+      <div data-anim-child="slide-up delay-4" class="row pt-50 md:pt-30">
+        <div class="col-12">
+          <div class="roomsSingleGrid -type-1">
+            <div>
+              <a class="image-popup" href="/assets/img/superdeluxe.avif">
+            <img src="/assets/img/superdeluxe.avif" alt="image"></a>
+          </div>
+          <div>
+            <a class="image-popup" href="/assets/img/superdeluxe2.jpeg">
+            <img src="/assets/img/superdeluxe2.jpeg" alt="image"></a>
+            </div>
+            <div>
+              <a class="image-popup" href="/assets/img/superdeluxe3.jpeg">
+              <img src="/assets/img/superdeluxe3.jpeg" alt="image"></a>
+              </div>
+                <div>
+                  <a class="image-popup" href="/assets/img/superdeluxe4.jpeg">
+                  <img src="/assets/img/superdeluxe4.jpeg" alt="image"></a>
+                  </div>
+                  <div>
+                    <a class="image-popup" href="/assets/img/superdeluxe5.jpeg">
+                    <img src="/assets/img/superdeluxe5.jpeg" alt="image"></a>
+                    </div>
+                        <div class="hidden-images" style="display: none;">
+                            <a class="image-popup" href="/assets/img/superdeluxe6.jpeg">
+                                <img src="/assets/img/superdeluxe6.jpeg" alt="image">
+                            </a>
+                        </div>
+                        <div class="hidden-images" style="display: none;">
+                            <a class="image-popup" href="/assets/img/superdeluxe7.jpeg">
+                                <img src="/assets/img/superdeluxe7.jpeg" alt="image">
+                            </a>
+                        </div>
+    
+                    
+                    <div class="roomsSingleGrid__button" id="showAllBtn">
+                        <div class="icon-photo text-20 mr-10"></div>
+                        <div class="text-15 fw-500">All Photos</div>
+                    </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        document.getElementById("showAllBtn").addEventListener("click", function () {
+            document.querySelectorAll(".hidden-images").forEach(function (imageDiv) {
+                imageDiv.style.display = "block"; // Show all hidden images
+            });
+            this.style.display = "none"; // Hide the button after showing all images
+        });
+        
+    </script>
+      <div class="row y-gap-40 justify-between pt-50">
+        <div class="col-xl-8 col-lg-8">
+          <h2 class="text-40">About accommodation</h2>
+          <p class="mt-40">
+            Our highly spacious 460 sq. ft. super-deluxe rooms are perfect for a long staycation. With extravagant facilities of a multipurpose couch, king-sized bed, and smart TV, you will get to experience the lush life. We also offer a fancy minibar, for a small charge, so that you can simply sit back and unwind.
+          </p>
+
+          <div class="line -horizontal bg-border mt-50 mb-50"></div>
+          <h2 class="text-40">Room Facilities</h2>
+          <h2 class="text-30 mt-40">Complimentary Facilities</h2>
+          <div class="row x-gap-50 y-gap-20 pt-40" style="font-size: 16px;">
+            <div class="col-sm-4">
+              <ul class="ulList -type-1">
+                <li>Accessible Bathroom</li>
+    <li>Credit/Debit Cards Accepted</li>
+    <li>Family Rooms</li>
+    <li>Luggage Storage Facility</li>
+    <li>Dental Kit & Shaving Kit</li>
+    <li>24X7 Security & Doorman</li>
+    <li>In-room accessibility</li>
+    <li>Breakfast</li>
+    <li>CCTV Monitoring</li>
+   
+              </ul>
+            </div>
+
+            <div class="col-sm-4">
+              <ul class="ulList -type-1">
+                <li>Wi-Fi - High-Speed Internet</li>
+                <li>Generator Backup</li>
+                <li>Electronic Key Cards</li>
+                <li>Fitness Centre (Upcoming)</li>
+                <li>Tea/Coffee Makers in All Rooms</li>
+                <li>Stationery Folders in All Rooms</li>
+                <li>Boarding for Drivers</li>
+                <li>Iron & Iron Board On Request</li>
+                
+              </ul>
+            </div>
+
+            <div class="col-sm-4">
+              <ul class="ulList -type-1">
+                <li>Business Centre</li>
+                <li>Wake-up Call Facility for All Rooms</li>
+                <li>Valet Parking</li>
+                <li>Car Washing</li>
+                <li>Hair Dryer in All Rooms</li>
+                <li>Daily Local/National Newspaper</li>
+                <li>Automated Shoe Clean Facility</li>
+                <li>In-Room Safe for All Rooms</li>
+              </ul>
+            </div>
+          </div>
+
+
+          
+          <div class="line -horizontal bg-border mt-50 mb-50"></div>
+          <h2 class="text-30">Chargeable Facilities</h2>
+          <div class="row x-gap-50 y-gap-20 pt-40" style="font-size: 16px;">
+            <div class="col-sm-4">
+              <ul class="ulList -type-1">
+                <li>Laundry</li>
+    <li>Multiple Dining Options</li>
+    <li>Fax/Photocopy/Print Facility</li>
+    <li>Taxi Service/Car Rentals</li>
+    <li>Meeting Rooms</li>
+    <li>Multi-Facility Shop</li>
+          </ul>
+              </ul>
+            </div>
+
+            <div class="col-sm-4">
+              <ul class="ulList -type-1">
+                <li>Doctor On Call</li>
+                <li>Room Service</li>
+                <li>Travel Assistance (Surcharge Applicable)</li>
+                <li>Airport Pick-Up</li>
+              </ul>
+            </div>
+
+            <div class="col-sm-4">
+              <ul class="ulList -type-1">
+                <li>Banquet Facility</li>
+                <li>Multi-Cuisine Restaurant</li>
+                <li>Railway Station Pickup</li>
+                <li>Foreign Exchange</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-5">
+            <div class="sidebar -rooms-single px-40 py-40 md:px-30 md:py-30 border-1 shadow-1">
+              <h3 class="text-30 mb-30">Book Your Room</h3>
+              <form id="ServiceForm" >
+                <div class="contactForm row y-gap-30">
+                  <div class="col-md-12">
+                    <div class="form-input ">
+                      <input type="text" name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.name %>" required>
+                      <label class="lh-1 text-16 text-light-1">Full Name</label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-input ">
+                      <input type="text" name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.phone %>" required>
+                      <label class="lh-1 text-16 text-light-1">Contact Number</label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-input ">
+                      <input type="text" name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.email %>" required>
+                      <label class="lh-1 text-16 text-light-1">Email</label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-input ">
+                      <input type="text" name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.service %>" value="Super Deluxe room" readonly>
+                      <label class="lh-1 text-16 text-light-1">Room</label>
+                    </div>
+                  </div>
+                 
+                  <div class="col-md-12">
+                    <div class="form-input ">
+                      <input type="date" name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.indate %>" required>
+                      <label style="top:-9px; transform:none; transition:none;">Check In Date</label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-input ">
+                      <input type="date" name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.outdate %>" required>
+                      <label style="top:-9px; transform:none; transition:none; ">Check Out Date</label>
+                    </div>
+                  </div>
+                  <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                      const inDate = document.querySelector('input[name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.indate %>"]');
+                      const outDate = document.querySelector('input[name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.outdate %>"]');
+                  
+                      function validateDates() {
+                          const today = new Date().toISOString().split("T")[0]; // Get today's date in YYYY-MM-DD format
+                          inDate.setAttribute("min", today);
+                          outDate.setAttribute("min", today);
+                  
+                          if (inDate.value) {
+                              outDate.setAttribute("min", inDate.value); // Ensure outDate is after inDate
+                          }
+                  
+                          if (outDate.value && outDate.value <= inDate.value) {
+                              alert("Check-Out Date must be after Check-In Date.");
+                              outDate.value = ""; // Reset outDate if invalid
+                          }
+                      }
+                  
+                      inDate.addEventListener("change", validateDates);
+                      outDate.addEventListener("change", validateDates);
+                  });
+                  
+                  </script>
+                  <div class="col-md-12">
+                    <div class="form-input ">
+                      <input type="number" name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.adults %>" required>
+                      <label class="lh-1 text-16 text-light-1">No. of Adults</label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-input ">
+                      <input type="number" name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.child %>" required>
+                      <label class="lh-1 text-16 text-light-1">No. of Childrens</label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                  <div class="form-input ">
+                    <textarea required name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.remarks %>" class="border-1" rows="3"></textarea>
+                    <label class="lh-1 ">Remarks</label>
+                  </div>
+                  </div>
+                  <div class="form-group" style="display: none;" >
+                    <input type="hidden" name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.serviceType %>" value="Rooms" readonly>
+                    <input type="hidden" id="websiteProjectId" name="websiteProjectId" value="6667f654a9d9239927ce8743">
+                </div>
+                <div class="col-12">
+                  <button type="submit" name="submit" value="submit" class="button -md -type-2 w-1/1 bg-accent-2 -accent-1">BOOK NOW</button>
+                </div>
+                </div>
+              </form>
+  <script>
+    document.getElementById('ServiceForm').addEventListener('submit', async function (e) { 
+      e.preventDefault(); // Prevent the default form submission
+  
+      const phoneInput = document.querySelector('input[name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.phone %>"]');
+      const phoneNumber = phoneInput.value.trim();
+    
+      // Validate phone number: Must be exactly 10 digits and only numeric
+      if (!/^\d{10}$/.test(phoneNumber)) {
+          alert("Contact Number must be exactly 10 digits and numeric.");
+          return; // Stop form submission if validation fails
+      }
+
+      try {
+          const API_BASE_URL = "<%= API_BASE_URL %>";
+          const websiteID = "<%= websiteID %>";
+          const WEBSITEIDKEY = "<%= WEBSITE_ID_KEY %>";
+          const SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS = <%- JSON.stringify(SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS) %>;
+  
+          const CREATE_SERVICE_ENQUIRY_END_POINT = `${API_BASE_URL}/website/service-enquiry/create-service-enquiry`;
+  
+          const ServiceForm = e.target; // Reference to the form element
+          const WEBSITE_ID_KEY = WEBSITEIDKEY;
+  
+          // Prepare the payload from the form fields
+          const payload = {
+              [SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.name]: ServiceForm.querySelector(
+                  `input[name="${SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.name}"]`
+              ).value,
+              [SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.phone]: phoneNumber,
+              [SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.email]: ServiceForm.querySelector(
+                  `input[name="${SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.email}"]`
+              ).value,
+              [SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.service]: ServiceForm.querySelector(
+                `input[name="${SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.service}"]`
+            ).value,
+            [SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.indate]: ServiceForm.querySelector(
+                `input[name="${SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.indate}"]`
+            ).value,
+            [SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.outdate]: ServiceForm.querySelector(
+                `input[name="${SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.outdate}"]`
+            ).value,
+            [SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.adults]: ServiceForm.querySelector(
+              `input[name="${SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.adults}"]`
+          ).value,
+          [SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.child]: ServiceForm.querySelector(
+                `input[name="${SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.child}"]`
+            ).value,
+            [SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.serviceType]: ServiceForm.querySelector(
+                `input[name="${SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.serviceType}"]`
+            ).value,
+              [SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.remarks]: ServiceForm.querySelector(
+                  `textarea[name="${SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.remarks}"]`
+              ).value,
+              [WEBSITE_ID_KEY]: websiteID,
+          };
+  
+          // Set headers for the request
+          const headers = new Headers({
+              "Content-Type": "application/json",
+          });
+  
+          // Send POST request to the API
+          const response = await fetch(CREATE_SERVICE_ENQUIRY_END_POINT, {
+              method: "POST",
+              headers,
+              body: JSON.stringify(payload),
+          });
+  
+          // Handle response
+          if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+  
+          const data = await response.json();
+  
+          // Redirect to the thank-you page on success
+          sessionStorage.setItem("thankYouMessage", "We've Recieved Your Booking Request and will Reach out to you soon");
+          window.location.href = "/thankyou";
+      } catch (error) {
+          console.error("Form submission error", error);
+          // Optionally, you can show an error message or log the error
+      }
+  });
+  </script>
+              
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="layout-pt-lg layout-pb-lg "  style="padding-bottom: 100px;">
+    <div data-anim-wrap class="container">
+      <div class="row y-gap-30 justify-between items-end">
+        <div data-anim-child="slide-up delay-1" class="col-auto">
+          <div class="text-15 uppercase mb-30 sm:mb-10">EXPLORE</div>
+          <h2 class="text-64 md:text-40 lh-065">Similar Rooms</h2>
+        </div>
+
+        <div data-anim-child="slide-up delay-1" class="col-auto">
+          <a href="/rooms" class="button -type-1">
+            <i class="-icon icon-arrow-circle-right text-30"></i>
+            VIEW ALL MORE
+          </a>
+        </div>
+      </div>
+
+      <div class="relative mt-100 sm:mt-50">
+        <div class="overflow-hidden js-section-slider" data-gap="30" data-slider-cols="xl-3 lg-3 md-2 sm-1 base-1" data-nav-prev="js-slider2-prev" data-nav-next="js-slider2-next">
+          <div class="swiper-wrapper" style="height: 600px;">
+
+            <div class="swiper-slide">
+              <div data-anim-child="slide-up delay-4">
+                <a href="/deluxe-room-details" class="roomCard -type-2 -hover-button-center">
+                  <div class="roomCard__image -no-rounded ratio ratio-45:54 -hover-button-center__wrap">
+                    <img src="/assets/img/deluxe.avif" alt="image" class="img-ratio">
+
+
+                    <div class="-hover-button-center__button flex-center size-130 rounded-full bg-accent-1-50 blur-1 border-white-10">
+                      <span class="text-15 fw-500 text-white">BOOK NOW</span>
+                    </div>
+                  </div>
+
+                  <div class="roomCard__content mt-30">
+                    <div class="d-flex justify-between items-end">
+                      <h3 class="roomCard__title lh-065 text-40 md:text-24">Deluxe Room</h3>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div data-anim-child="slide-up delay-4">
+                <a href="/executive-room-details" class="roomCard -type-2 -hover-button-center">
+                  <div class="roomCard__image -no-rounded ratio ratio-45:54 -hover-button-center__wrap">
+                    <img src="/assets/img/executive.avif" alt="image" class="img-ratio">
+
+
+                    <div class="-hover-button-center__button flex-center size-130 rounded-full bg-accent-1-50 blur-1 border-white-10">
+                      <span class="text-15 fw-500 text-white">BOOK NOW</span>
+                    </div>
+                  </div>
+
+                  <div class="roomCard__content mt-30">
+                    <div class="d-flex justify-between items-end">
+                      <h3 class="roomCard__title lh-065 text-40 md:text-24">Executive Room</h3>
+                    </div>
+
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div data-anim-child="slide-up delay-4">
+                <a href="/suite-room-details" class="roomCard -type-2 -hover-button-center">
+                  <div class="roomCard__image -no-rounded ratio ratio-45:54 -hover-button-center__wrap">
+                    <img src="/assets/img/suite.avif" alt="image" class="img-ratio">
+
+
+                    <div class="-hover-button-center__button flex-center size-130 rounded-full bg-accent-1-50 blur-1 border-white-10">
+                      <span class="text-15 fw-500 text-white">BOOK NOW</span>
+                    </div>
+                  </div>
+
+                  <div class="roomCard__content mt-30">
+                    <div class="d-flex justify-between items-end">
+                      <h3 class="roomCard__title lh-065 text-40 md:text-24">Suite Rooms</h3>
+                    </div>
+
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div data-anim-child="slide-up delay-4">
+                <a href="/executivesuite-room-details" class="roomCard -type-2 -hover-button-center">
+                  <div class="roomCard__image -no-rounded ratio ratio-45:54 -hover-button-center__wrap">
+                    <img src="/assets/img/executivesuite.avif" alt="image" class="img-ratio">
+
+
+                    <div class="-hover-button-center__button flex-center size-130 rounded-full bg-accent-1-50 blur-1 border-white-10">
+                      <span class="text-15 fw-500 text-white">BOOK NOW</span>
+                    </div>
+                  </div>
+
+                  <div class="roomCard__content mt-30">
+                    <div class="d-flex justify-between items-end">
+                      <h3 class="roomCard__title lh-065 text-40 md:text-24">Executive Suite</h3>
+                    </div>
+
+                  </div>
+                </a>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="navAbsolute -type-2">
+          <button class="button -outline-accent-1 size-80 md:size-60 flex-center rounded-full js-slider2-prev">
+            <i class="icon-arrow-left text-24"></i>
+          </button>
+
+          <button class="button -outline-accent-1 size-80 md:size-60 flex-center rounded-full js-slider2-next">
+            <i class="icon-arrow-right text-24"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<%- include('footer') %>

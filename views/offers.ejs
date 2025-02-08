@@ -1,0 +1,60 @@
+<%- include('header'), {seoDetails} %>
+
+
+<section class="relative layout-pt-lg layout-pb-lg">
+    <div class="sectionBg -mx-60 bg-accent-1 "></div>
+
+    <div data-anim-wrap class="container">
+      <div class="row y-gap-40 items-center">
+        <div data-anim-child="slide-up delay-2" class="col-xl-3">
+          <div class="text-15 uppercase mb-20 sm:mb-10 text-white">There's So Much to Discover</div>
+          <h2 class="text-64 md:text-40 text-white">OFFERS</h2>
+          <p class="text-white lh-18 mt-40 md:mt-20">
+            Welcome to the best five-star deluxe <br class="lg:d-none">
+            hotel.
+          </p>
+
+          <div class="d-flex items-center mt-60 md:mt-30">
+            <button class="button -outline-white size-50 flex-center rounded-full js-slider3-prev">
+              <i class="icon-arrow-left text-15 text-white"></i>
+            </button>
+
+            <button class="button -outline-white size-50 flex-center rounded-full ml-30 js-slider3-next">
+              <i class="icon-arrow-right text-15 text-white"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="col-xl-9">
+          <div class="pl-40 lg:pl-0">
+            <div class="relative overflow-hidden js-section-slider" data-gap="20" data-slider-cols="xl-3 lg-3 md-2 sm-1 base-1" data-nav-prev="js-slider3-prev" data-nav-next="js-slider3-next">
+              <div class="swiper-wrapper">
+
+                
+
+                <% events.forEach(item => { %>
+
+                <div class="swiper-slide">
+                  <div data-anim-child="img-right cover-accent-1 delay-8">
+                    <a href="#" class="baseCard -type-3">
+                      <div class="baseCard__image ratio ratio-33:45">
+                        <img src="<%= process.env.S3_BASE_URL + item.coverImage %>" alt="image" class="img-ratio rounded-16">
+                        <div class="baseCard__badge text-15 fw-500 lh-1 bg-white rounded-12 text-accent-1"><%= item.title %> <br> <br>
+                       <%= item.subTitle %></div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+<% }) %>
+            
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <%- include('footer') %>

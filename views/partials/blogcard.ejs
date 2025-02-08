@@ -1,0 +1,47 @@
+<section class="layout-pt-lg layout-pb-lg" style="padding-top: 70px;">
+    <div class="container">
+      <div class="row y-gap-85 x-gap-85">
+
+        <% blogs.forEach(item => { %>
+        <div class="col-lg-4 col-md-6">
+          <a href="/blog-details/<%= item.seoDetails.slug %>" class="baseCard -type-2">
+            <div class="baseCard__image ratio ratio-41:50">
+              <img src="<%= process.env.S3_BASE_URL + item.coverImage %>" alt="image" class="img-ratio">
+            </div>
+
+            <div class="baseCard__content mt-30">
+              <div class="row x-gap-10">
+
+                <div class="col-auto">
+                    <%= item.postDate %>
+                </div>
+              </div>
+
+              <h4 class="text-30 md:text-25 mt-15"><%= item.title %></h4>
+
+              <p class="mt-15"><%- item.description.replace(/<[^>]*>/g, '').split(' ').slice(0, 16).join(' ') %>...</p>
+
+              <div class="d-flex mt-20">
+                <button class="button -type-1">
+                  <i class="-icon">
+                    <svg width="50" height="30" viewBox="0 0 50 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M35.8 28.0924C43.3451 28.0924 49.4616 21.9759 49.4616 14.4308C49.4616 6.88577 43.3451 0.769287 35.8 0.769287C28.255 0.769287 22.1385 6.88577 22.1385 14.4308C22.1385 21.9759 28.255 28.0924 35.8 28.0924Z" stroke="#122223" />
+                      <path d="M33.4808 10.2039L32.9985 10.8031L37.2931 14.2623H0.341553V15.0315H37.28L33.0008 18.4262L33.4785 19.0285L39 14.6492L33.4808 10.2039Z" fill="#122223" />
+                    </svg>
+                  </i>
+                  READ MORE
+                </button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+       <% }) %>
+
+       
+
+      </div>
+
+      
+    </div>
+  </section>

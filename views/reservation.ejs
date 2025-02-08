@@ -1,0 +1,163 @@
+
+<%- include('header'), {seoDetails} %>
+<section data-anim-wrap class="pageHero -type-2 -items-center">
+  <div data-anim-child="img-right cover-white delay-1" class="pageHero__bg">
+    <img src="<%= image %>" alt="image">
+  </div>
+
+  <div class="container">
+    <div class="row justify-center">
+      <div class="col-12">
+        <div data-split='lines' data-anim-child="split-lines delay-3" class="pageHero__content text-center">
+          <h1 class="pageHero__title lh-12 capitalize text-white">
+            <%= reserve %>
+          </h1>
+          <p class="text-white"><%= subtitle %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="layout-pt-lg" style="padding-top: 60px;">
+    <div data-anim-wrap class="container">
+      <div class="row justify-center text-center">
+        <div class="col-auto">
+            <h2 class="text-44 uppercase mb-10 ">Book Your Space at Babylon Capital</h2>
+          <div class="text-15 md:text-40 pb-30">Secure your preferred venue by submitting your enquiry today</div>
+          
+        </div>
+      </div>
+      
+<div class="row y-gap-40 justify-center pb-50 ">
+<div class="col-xl-8 col-lg-8">
+    <div class="sidebar -rooms-single px-40 py-40 md:px-30 md:py-30 ">
+      <form id="ServiceForm" >
+        <div class="contactForm row y-gap-30">
+          <div class="col-md-6">
+            <div class="form-input ">
+              <input type="text" name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.name %>" required>
+              <label class="lh-1 text-16 text-light-1">Full Name</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-input ">
+              <input type="text" name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.phone %>" required>
+              <label class="lh-1 text-16 text-light-1">Contact Number</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-input ">
+              <input type="text" name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.email %>" required>
+              <label class="lh-1 text-16 text-light-1">Email</label>
+            </div>
+          </div>
+        
+         
+          <div class="col-md-6">
+            <div class="form-input ">
+              <input type="date" name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.indate %>" required>
+              <label style="top:-9px; transform:none; transition:none;">Date</label>
+            </div>
+          </div>
+      
+
+          
+          <div class="col-md-12">
+          <div class="form-input ">
+            <textarea required name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.remarks %>" class="border-1" rows="3"></textarea>
+            <label class="lh-1 ">Remarks</label>
+          </div>
+          </div>
+          <div class="form-group" style="display: none;" >
+            <input type="hidden" name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.service %>" value="<%= reserve %>" readonly>
+            <input type="hidden" name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.serviceType %>" value="MICE" readonly>
+            <input type="hidden" id="websiteProjectId" name="websiteProjectId" value="6667f654a9d9239927ce8743">
+        </div>
+        <div class="col-12">
+          <button type="submit" name="submit" value="submit" class="button -md -type-2 w-1/1 bg-accent-2 -accent-1">BOOK NOW</button>
+        </div>
+        </div>
+      </form>
+<script>
+document.getElementById('ServiceForm').addEventListener('submit', async function (e) { 
+  e.preventDefault(); // Prevent the default form submission
+
+  const phoneInput = document.querySelector('input[name="<%= SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.phone %>"]');
+  const phoneNumber = phoneInput.value.trim();
+
+  // Validate phone number: Must be exactly 10 digits and only numeric
+  if (!/^\d{10}$/.test(phoneNumber)) {
+      alert("Contact Number must be exactly 10 digits and numeric.");
+      return; // Stop form submission if validation fails
+  }
+
+  try {
+      const API_BASE_URL = "<%= API_BASE_URL %>";
+      const websiteID = "<%= websiteID %>";
+      const WEBSITEIDKEY = "<%= WEBSITE_ID_KEY %>";
+      const SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS = <%- JSON.stringify(SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS) %>;
+
+      const CREATE_SERVICE_ENQUIRY_END_POINT = `${API_BASE_URL}/website/service-enquiry/create-service-enquiry`;
+
+      const ServiceForm = e.target; // Reference to the form element
+      const WEBSITE_ID_KEY = WEBSITEIDKEY;
+
+      // Prepare the payload from the form fields
+      const payload = {
+          [SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.name]: ServiceForm.querySelector(
+              `input[name="${SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.name}"]`
+          ).value,
+          [SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.phone]: phoneNumber, // Use validated phone input
+          [SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.email]: ServiceForm.querySelector(
+              `input[name="${SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.email}"]`
+          ).value,
+          [SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.service]: ServiceForm.querySelector(
+              `input[name="${SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.service}"]`
+          ).value,
+          [SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.indate]: ServiceForm.querySelector(
+              `input[name="${SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.indate}"]`
+          ).value,
+          [SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.serviceType]: ServiceForm.querySelector(
+              `input[name="${SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.serviceType}"]`
+          ).value,
+          [SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.remarks]: ServiceForm.querySelector(
+              `textarea[name="${SERVICE_ENQUIRY_DYNAMIC_FIELDS_KEYS.remarks}"]`
+          ).value,
+          [WEBSITE_ID_KEY]: websiteID,
+      };
+
+      // Set headers for the request
+      const headers = new Headers({
+          "Content-Type": "application/json",
+      });
+
+      // Send POST request to the API
+      const response = await fetch(CREATE_SERVICE_ENQUIRY_END_POINT, {
+          method: "POST",
+          headers,
+          body: JSON.stringify(payload),
+      });
+
+      // Handle response
+      if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      // Redirect to the thank-you page on success
+      sessionStorage.setItem("thankYouMessage", "We've Received Your Booking Request and will Reach out to you soon");
+      window.location.href = "/thankyou";
+  } catch (error) {
+      console.error("Form submission error", error);
+  }
+});
+
+</script>
+      
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<%- include('footer') %>

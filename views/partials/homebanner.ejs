@@ -1,0 +1,86 @@
+<div data-anim-child="img-right cover-white" class="hero__bg hero__slider">
+    <% banners.forEach((slide, index) => { %>
+      <img 
+        src="<%= process.env.S3_BASE_URL + slide.bannerImage.webView %>" 
+        alt="image" 
+        class="slide <%= index === 0 ? 'active' : '' %>">
+    <% }) %>
+  </div>
+<style>
+.hero__slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .hero__bg {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Set a fixed height if needed */
+  }
+  
+  .hero__bg .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    filter: brightness(0.4);
+    /* Adjust height as needed (or use object-fit) */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .hero__bg .slide.active {
+    opacity: 1;
+  }
+  
+</style>      
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.hero__slider');
+    const slides = document.querySelectorAll('.hero__bg .slide');
+    let currentSlide = 0;
+    const slideDuration = 5000; // Time in ms for each slide
+    let autoSlideInterval = setInterval(showNextSlide, slideDuration);
+    
+    function showNextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+  
+    function showPrevSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+    
+    let startX = 0;
+    let endX = 0;
+    const swipeThreshold = 50; // Minimum px required for a swipe
+  
+    slider.addEventListener('touchstart', function(e) {
+      startX = e.changedTouches[0].screenX;
+      // Optionally pause auto sliding during swipe
+      clearInterval(autoSlideInterval);
+    });
+  
+    slider.addEventListener('touchend', function(e) {
+      endX = e.changedTouches[0].screenX;
+      const diffX = startX - endX;
+      
+      if (Math.abs(diffX) > swipeThreshold) {
+        if (diffX > 0) {
+          // Swiped left, show next slide
+          showNextSlide();
+        } else {
+          // Swiped right, show previous slide
+          showPrevSlide();
+        }
+      }
+      // Restart the auto slide interval after the swipe
+      autoSlideInterval = setInterval(showNextSlide, slideDuration);
+    });
+  });
+  
+</script>
